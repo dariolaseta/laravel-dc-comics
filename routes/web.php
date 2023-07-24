@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", [GuestController::class, "index"])->name("welcome");
+Route::get("/{id}", [GuestController::class, "show"]);
+
 Route::resource('comics', GuestController::class);
