@@ -9,7 +9,7 @@ class Comic extends Model
 {
     use HasFactory;
 
-    public $comicsData = [
+    public $fillable = [
         "title",
         "description",
         "thumb",

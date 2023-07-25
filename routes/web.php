@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PageController as GuestController;
+use App\Http\Controllers\PageController as AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", [GuestController::class, "index"])->name("welcome");
-Route::get("/{id}", [GuestController::class, "show"]);
+Route::get("/", [AdminController::class, "index"])->name("welcome");
+Route::get("/{id}", [AdminController::class, "show"]);
+Route::get("/comics/create", [AdminController::class, "create"]);
+Route::get("/comics", [AdminController::class, "store"]);
 
-Route::resource('comics', GuestController::class);
+Route::resource('comics', AdminController::class);
