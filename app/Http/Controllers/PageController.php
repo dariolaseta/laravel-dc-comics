@@ -69,7 +69,7 @@ class PageController extends Controller
     {
         $comic = Comic::findOrFail($id);
 
-        return view("comics.edit", compact($comic));
+        return view("comics.edit", compact("comic"));
     }
 
     /**
@@ -82,6 +82,7 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $update = Comic::findOrFail($id);
+        $update->update($request->all());
 
         return redirect()->route("welcome")->with("update");
     }
