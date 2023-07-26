@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PageController as AdminController;
+use App\Http\Controllers\ComicController as AdminComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", [AdminController::class, "index"])->name("welcome");
-Route::get("/{id}", [AdminController::class, "show"]);
-Route::get("/comics/create", [AdminController::class, "create"]);
-Route::get("/comics", [AdminController::class, "store"]);
+Route::get("/", [AdminComicController::class, "index"])->name("welcome");
+Route::get("/{id}", [AdminComicController::class, "show"]);
+Route::get("/comics/create", [AdminComicController::class, "create"]);
+Route::get("/comics", [AdminComicController::class, "store"]);
 
-Route::resource('comics', AdminController::class);
+Route::resource('comics', AdminComicController::class);
